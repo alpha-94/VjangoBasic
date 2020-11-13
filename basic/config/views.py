@@ -16,6 +16,9 @@
 # 장고의 제네릭 뷰를 많이 사용
 
 from django.http import HttpResponse
+# 템플릿 랜더
+from django.shortcuts import render
+
 
 def index(request):
     # 요청한 내용들 - 세션 , 쿠키 등등
@@ -24,6 +27,7 @@ def index(request):
     html = '<html><body>Hello! django</body><html>'
     return HttpResponse(html)
 
+
 # 뷰의 이름은 welcome
 # 접속주소  - welcome/
 # 내용은 : Welcome to Django.
@@ -31,3 +35,13 @@ def index(request):
 def welcome(request):
     html = '<html><body>Welcome to Django.</body><html>'
     return HttpResponse(html)
+
+
+def trmplate_test(request):
+    # 기본 템플릿 폴더
+    # 1. admin 앱
+    # 2. 각 앱의 폴더에 있는 templates 폴더
+    # 3. 내가 설정한 폴더
+    return render(request, 'test.html')
+
+# 함수형 뷰 만들기, 템플릿 만들기, URL 연결하기, 브라우저로 접속해보기

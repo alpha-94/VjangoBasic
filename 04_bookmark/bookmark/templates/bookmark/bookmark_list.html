@@ -1,0 +1,26 @@
+<div class="btn-group">
+    <a href="#" class="'btn btn-info">Add Bookmark</a>
+</div>
+<p></p>
+<table class="'table">
+    <tread>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Site</th>
+            <th scope="col">URL</th>
+            <th scope="col">Modify</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </tread>
+    <tbody>
+        {% for bookmark in object_list %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td><a href="#">{{bookmark.site_name}}</a> </td>
+                <td><a href="{{bookmark.url}}" target="_blank">{{bookmark.url}}</a> </td>
+                <td><a href="#" class="btn btn-success">Modify</a> </td>
+                <td><a href="#" class="btn btn-danger">Delete</a> </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
