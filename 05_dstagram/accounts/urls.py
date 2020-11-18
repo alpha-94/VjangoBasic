@@ -14,5 +14,7 @@ urlpatterns = [
     path('login/', auth_view.LoginView.as_view(), name='login'),
     # logout의 경우 관리자 로그아웃으로 들어가는 경우가 있어서 템플릿 경로를 설정 해야함 .
     path('logout/', auth_view.LogoutView.as_view(template_name= 'registration/logout.html'), name='logout'),
+
+    # 회원가입용
     path('register/', register, name='register'),
 ]

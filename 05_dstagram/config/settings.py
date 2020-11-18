@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photo',
     'accounts',
+    'disqus',
+    'django.contrib.sites', # __init__ 파일 내부에 six 로 urlencode, urlopen 변경
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # reverse_lazy 함수를 사용해서 다른 뷰를 적용할 수 있다.
 LOGIN_REDIRECT_URL = '/'
+
+DISQUS_WEBSITE_SHORTNAME = 'dstagram-ver1'
+SITE_ID = 1

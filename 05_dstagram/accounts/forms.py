@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django import forms
 
-
+# 댓글 : dstagram_ver1
 # 폼 : 폼태그 -> HTML 태그 -> 프론트 단에서 사용자의 입력을 받는 인터페이스
 # 장고의 폼 : HTML 의 폼 역할, 데이터 베이스에 저장할 내용을 형식, 제약조건 결정
 
@@ -15,6 +15,6 @@ class RegisterForm(forms.ModelForm):
 
     def clean_password2(self):
         cd = self.cleaned_data
-        if cd['passowrd'] != cd['password2']:
+        if cd['password'] != cd['password2']:
             raise forms.ValidationError('Passwords not matched!')
         return cd['password2']
